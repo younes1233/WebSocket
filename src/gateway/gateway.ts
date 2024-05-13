@@ -22,9 +22,7 @@ export class MyGateway implements OnModuleInit {
   @SubscribeMessage('newMessage')
   onNewMessage(@MessageBody() body: any) {
     console.log(body);
-    this.server.emit('onMessage', {
-      msg: 'New Message',
-      content: body,
-    });
+    this.server.emit('newMessage', body);
+
   }
 }
